@@ -15,9 +15,9 @@ function ExplorePage() {
 
 		const client = new GraphQLClient("https://api.taddy.org", {
 			headers: {
-				"X-USER-ID": "275",
+				"X-USER-ID": "1493",
 				"X-API-KEY":
-					"c9b56c02e3b1cbe7a56bbc09433ded1139039bcec77d335b8f5956b23d5a78471dd246321a502643d7615d8c97d0cdd01a",
+					"05d91224222843e9df7f45a0a3b6b6d0842e657db350d3ff071a57452d15c337f1cdf32888f8b96d7afc1d032ac9531fcc",
 			},
 		});
 
@@ -76,7 +76,7 @@ function ExplorePage() {
 			</div>
 			{loading && <CardSkeleton cards={25} />}
 			{error ? (
-				<div className="flex h-screen flex-col items-center justify-center gap-2">
+				<div className="flex flex-col items-center justify-center h-screen gap-2">
 					<h1 className="text-center text-3xl text-[red] md:text-4xl">
 						Something went wrong😥
 					</h1>

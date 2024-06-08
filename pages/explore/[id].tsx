@@ -35,9 +35,9 @@ function ListenToSingleCast() {
 	useEffect(() => {
 		const client = new GraphQLClient("https://api.taddy.org", {
 			headers: {
-				"X-USER-ID": "275",
+				"X-USER-ID": "1493",
 				"X-API-KEY":
-					"c9b56c02e3b1cbe7a56bbc09433ded1139039bcec77d335b8f5956b23d5a78471dd246321a502643d7615d8c97d0cdd01a",
+					"05d91224222843e9df7f45a0a3b6b6d0842e657db350d3ff071a57452d15c337f1cdf32888f8b96d7afc1d032ac9531fcc",
 			},
 		});
 
@@ -93,7 +93,7 @@ function ListenToSingleCast() {
 	return (
 		<>
 			{error ? (
-				<div className="flex h-screen flex-col items-center justify-center gap-2">
+				<div className="flex flex-col items-center justify-center h-screen gap-2">
 					<h1 className="text-center text-3xl text-[red] md:text-5xl">
 						Something went wrong😥
 					</h1>
@@ -111,14 +111,14 @@ function ListenToSingleCast() {
 						{loading ? (
 							<Skeleton width={200} height={200} duration={1.4} />
 						) : (
-							<div className=" h-full w-full ">
+							<div className="w-full h-full ">
 								<Image
 									width={500}
 									height={500}
 									property="true"
 									src={fullPodcast?.imageUrl}
 									alt={fullPodcast?.name}
-									className="h-full w-full"
+									className="w-full h-full"
 								/>
 							</div>
 						)}
@@ -134,7 +134,7 @@ function ListenToSingleCast() {
 								</div>
 							</div>
 						) : (
-							<div className="h-full w-full">
+							<div className="w-full h-full">
 								<h1 className="py-1 text-2xl font-medium text-white">
 									{fullPodcast?.name}
 								</h1>
@@ -174,7 +174,7 @@ function ListenToSingleCast() {
 						{loading ? (
 							<CardSkeleton cards={16} />
 						) : (
-							<div className="mt-5 mb-7 grid grid-cols-2 gap-3 sm:gap-7 md:gap-10">
+							<div className="grid grid-cols-2 gap-3 mt-5 mb-7 sm:gap-7 md:gap-10">
 								{episodes.map((data: any) => {
 									return (
 										<div
@@ -184,14 +184,14 @@ function ListenToSingleCast() {
 												playSinglePodcast.uuid === data.uuid && "active-podcast"
 											} mx-auto flex w-full max-w-[270px] cursor-pointer flex-col flex-wrap items-center justify-center gap-5 rounded-lg bg-[#0b0a0fad] p-3 shadow-sm shadow-black transition-colors hover:bg-[#2d0796] md:flex-row lg:max-w-none lg:flex-col xl:flex-row`}
 										>
-											<div className="h-auto w-full flex-1 lg:h-full ">
+											<div className="flex-1 w-full h-auto lg:h-full ">
 												<Image
 													width={200}
 													height={200}
 													src={data?.imageUrl}
 													alt={data.name}
 													priority
-													className="h-full w-full object-cover"
+													className="object-cover w-full h-full"
 												/>
 											</div>
 											<div className="flex-[2]">

@@ -22,16 +22,16 @@ function Sidebar({ location, setShowPlaying }: locationProp) {
 					: "border-[#2d0796] md:border-[#A71930]"
 			} bg-[#060807] sm:sticky sm:top-0 sm:left-0 sm:h-screen sm:border-none sm:bg-transparent`}
 		>
-			<Link href="/explore" className=" relative hidden text-center md:block">
-				<h1 className="relative mx-auto w-fit py-3 text-4xl font-medium capitalize text-white">
-					<span className="text-[#A71930]">myPo</span>dcast.
+			<Link href="/explore" className="relative hidden text-center  md:block">
+				<h1 className="relative py-3 mx-auto text-4xl font-medium text-white capitalize w-fit">
+					<span className="text-[#A71930]">ATLD</span>cast.
 					<div className="absolute -top-2 -right-3 text-[11px] text-gray-500">
 						{location}
 					</div>
 				</h1>
 			</Link>
-			<nav className="my-scroll mx-auto w-full overflow-auto xs:w-fit xs:overflow-hidden">
-				<ul className="flex w-full justify-center gap-4 px-3 py-3 text-gray-400 xs:w-fit sm:mt-5 sm:flex-col md:py-0">
+			<nav className="w-full mx-auto overflow-auto my-scroll xs:w-fit xs:overflow-hidden">
+				<ul className="flex justify-center w-full gap-4 px-3 py-3 text-gray-400 xs:w-fit sm:mt-5 sm:flex-col md:py-0">
 					{sideLinks.map((data) => {
 						return (
 							<Link
