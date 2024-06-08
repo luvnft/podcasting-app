@@ -2,8 +2,8 @@ import { sideLinks } from "@/sidebarData";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FaTwitter } from "react-icons/fa";
-import { FaTiktok } from 'react-icons/fa';
-import { FiDiscord } from "react-icons/fi";
+import { FaTiktok } from "react-icons/fa";
+import { FaDiscord } from "react-icons/fa";
 
 function Footer() {
 	const { pathname } = useRouter();
@@ -28,7 +28,7 @@ function Footer() {
 				</ul>
 				<div className="flex items-center justify-center flex-1 gap-7">
 					<Link href="https://discord.gg/WJB4GAAvNr">
-						<FiDiscord color="white" size={15} />
+						<FaDiscord color="white" size={15} />
 					</Link>
 					<Link href="https://tiktok.com/@atl5d">
 						<FaTiktok color="white " size={15} />
