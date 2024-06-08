@@ -106,7 +106,7 @@ function PlayingNow() {
 								</h1>
 							) : (
 								<h1 className=" text-2xl font-medium">
-									<span className="text-[#0f9c4a]">Po</span>dcast.
+									<span className="text-[#A71930]">Po</span>dcast.
 								</h1>
 							)}
 							<div className="scrolling-carousel">

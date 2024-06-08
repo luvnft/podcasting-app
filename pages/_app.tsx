@@ -22,8 +22,8 @@ export default function App({ Component, pageProps }: AppProps) {
 	function CustomToast() {
 		return (
 			<div>
-				<h1>Welcome to v2 of MyPodcast🎉</h1>
-				<p>You can now Search for your favorite podcasts🚀</p>
+				<h1>Welcome to v2 of ATL5Dcast🎉</h1>
+				<p>You can now Search for your favorite Atlanta podcasts🚀</p>
 			</div>
 		);
 	}
@@ -60,24 +60,24 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<PodcastProvider>
 			<SkeletonTheme baseColor="#1c1c1d" highlightColor="#515151">
-				<div className="my-max mx-auto grid w-full grid-cols-1 gap-1 pt-3 sm:flex sm:justify-between sm:gap-3 md:pt-0">
+				<div className="grid w-full grid-cols-1 gap-1 pt-3 mx-auto my-max sm:flex sm:justify-between sm:gap-3 md:pt-0">
 					<div className="sticky top-0 z-50 flex md:flex-[1.5]">
 						<Sidebar setShowPlaying={setShowPlaying} location={location} />
 					</div>
 					<main className={`row-start-1 shrink sm:flex-[3.5]`}>
 						<Link
 							href="/explore"
-							className=" relative block text-center md:hidden"
+							className="relative block text-center md:hidden"
 						>
-							<h1 className="relative mx-auto w-fit py-3 text-4xl font-medium capitalize text-white">
-								<span className="text-[#0f9c4a]">myPo</span>dcast.
+							<h1 className="relative py-3 mx-auto text-4xl font-medium text-white capitalize w-fit">
+								<span className="text-[#A71930]">ATL5D</span>cast.
 								<div className="absolute -top-2 -right-3 text-[11px] text-gray-500">
 									{location}
 								</div>
 							</h1>
 						</Link>
 						<div className="sm:mb-16 lg:mb-0">
-							<ProgressBar color="#0f9c4a" height={3} />
+							<ProgressBar color="#A71930" height={3} />
 							<ToastContainer limit={1} closeOnClick />;
 							<Component {...pageProps} />
 						</div>
@@ -89,7 +89,7 @@ export default function App({ Component, pageProps }: AppProps) {
 						`}
 					>
 						{!error && (
-							<p className="ml-16 pt-3 text-2xl font-bold text-white sm:hidden">
+							<p className="pt-3 ml-16 text-2xl font-bold text-white sm:hidden">
 								Playing Now...
 							</p>
 						)}

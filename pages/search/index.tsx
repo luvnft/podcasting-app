@@ -19,37 +19,42 @@ function SearchPage() {
 
 		const client = new GraphQLClient("https://api.taddy.org", {
 			headers: {
-				"X-USER-ID": "275",
+				"X-USER-ID": "1493",
 				"X-API-KEY":
-					"c9b56c02e3b1cbe7a56bbc09433ded1139039bcec77d335b8f5956b23d5a78471dd246321a502643d7615d8c97d0cdd01a",
+					"05d91224222843e9df7f45a0a3b6b6d0842e657db350d3ff071a57452d15c337f1cdf32888f8b96d7afc1d032ac9531fcc",
 			},
 		});
 
 		const query = `
-  query {
-    searchForTerm(term:"${inputValue}", filterForTypes:PODCASTSERIES){
-      searchId
-      podcastSeries{
-        uuid
-		name
-		itunesId
-		description
-		imageUrl
-      }
-    }
-  }
-`;
+			query {
+				searchForTerm(term:"${inputValue}", filterForTypes:PODCASTSERIES){
+					searchId
+					podcastSeries{
+						uuid
+						name
+						itunesId
+						description
+						imageUrl
+					}
+				}
+			}
+		`;
 
 		client
 			.request(query)
 			.then((response: any) => {
-				setPodcasts(response.searchForTerm.podcastSeries);
-				if (response.searchForTerm.podcastSeries === 0) {
+				const atlantaPodcasts = response.searchForTerm.podcastSeries.filter((podcast: any) =>
+					podcast.name.toLowerCase().includes("atlanta") ||
+					podcast.description.toLowerCase().includes("atlanta")
+				);
+				setPodcasts(atlantaPodcasts);
+				if (atlantaPodcasts.length === 0) {
 					setLoading(false);
-					setError("Sorry Podcast was not found");
+					setError("No Atlanta podcasts found");
+				} else {
+					setLoading(false);
+					setError(null);
 				}
-				setLoading(false);
-				setError(null);
 			})
 			.catch((error) => {
 				setLoading(false);
@@ -82,7 +87,7 @@ function SearchPage() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<form className="mx-auto mt-3 h-fit" onSubmit={(e) => handleSubmit(e)}>
-				<div className="sticky top-3 z-30 mx-auto flex w-full items-center justify-center overflow-hidden rounded-md border-2 border-[#0f9c4a] bg-black">
+				<div className="sticky top-3 z-30 mx-auto flex w-full items-center justify-center overflow-hidden rounded-md border-2 border-[#A71930] bg-black">
 					<input
 						ref={inputRef}
 						className="h-full flex-1 bg-black p-2 pl-2 text-white outline-none  placeholder:text-sm placeholder:text-[#888686] "
@@ -103,7 +108,7 @@ function SearchPage() {
 				<div className="grid content-center text-center text-white">
 					{loading && <CardSkeleton cards={25} />}
 					{error ? (
-						<div className="flex h-screen flex-col items-center justify-center gap-2">
+						<div className="flex flex-col items-center justify-center h-screen gap-2">
 							<h1 className="text-center text-3xl text-[red] md:text-4xl">
 								Something went wrong😥
 							</h1>
@@ -113,7 +118,7 @@ function SearchPage() {
 							</p>
 							<button
 								onClick={fetchData}
-								className=" mt-4 rounded-md bg-[#0f9c4a] py-2 px-10 text-lg text-white shadow-md active:scale-[1.1]"
+								className=" mt-4 rounded-md bg-[#A71930] py-2 px-10 text-lg text-white shadow-md active:scale-[1.1]"
 							>
 								Retry
 							</button>

@@ -19,12 +19,12 @@ function Sidebar({ location, setShowPlaying }: locationProp) {
 			className={`fixed left-0 bottom-0 w-full border-t-4 ${
 				togglePlaying
 					? "border-green-500"
-					: "border-[#2d0796] md:border-[#0f9c4a]"
+					: "border-[#2d0796] md:border-[#A71930]"
 			} bg-[#060807] sm:sticky sm:top-0 sm:left-0 sm:h-screen sm:border-none sm:bg-transparent`}
 		>
 			<Link href="/explore" className=" relative hidden text-center md:block">
 				<h1 className="relative mx-auto w-fit py-3 text-4xl font-medium capitalize text-white">
-					<span className="text-[#0f9c4a]">myPo</span>dcast.
+					<span className="text-[#A71930]">myPo</span>dcast.
 					<div className="absolute -top-2 -right-3 text-[11px] text-gray-500">
 						{location}
 					</div>

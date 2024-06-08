@@ -21,10 +21,10 @@
 			width: 15px;
 		}
 		&::-webkit-scrollbar-thumb {
-			background: linear-gradient(#2d0796, #0f9c4a);
+			background: linear-gradient(#2d0796, #A71930);
 			border-radius: 20px;
 			&:hover {
-				background: linear-gradient(#0f9c4a, #2d0796, #0f9c4a);
+				background: linear-gradient(#A71930, #2d0796, #A71930);
 			}
 		}
 	}
@@ -35,7 +35,7 @@
 	}
 
 	.my-hover {
-		background-color: #0f9c4a;
+		background-color: #A71930;
 		transition: 0.3s ease;
 		color: white;
 		width: fit-content;
@@ -121,7 +121,7 @@
 	}
 
 	.active-podcast {
-		background-color: #0f9c4a !important;
+		background-color: #A71930 !important;
 	}
 
 	.my-scroll::-webkit-scrollbar {
