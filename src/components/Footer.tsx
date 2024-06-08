@@ -2,7 +2,7 @@ import { sideLinks } from "@/sidebarData";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FaTwitter } from "react-icons/fa";
-import { TiSocialTikTok } from "react-icons/ti";
+import { FaTiktok } from 'react-icons/fa';
 import { FiDiscord } from "react-icons/fi";
 
 function Footer() {
@@ -31,7 +31,7 @@ function Footer() {
 						<FiDiscord color="white" size={15} />
 					</Link>
 					<Link href="https://tiktok.com/@atl5d">
-						<TiSocialTikTok color="white " size={15} />
+						<FaTiktok color="white " size={15} />
 					</Link>
 					<Link href="https://x.com/atl5d">
 						<FaTwitter color="white" size={15} />
