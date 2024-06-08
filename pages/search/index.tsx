@@ -11,7 +11,7 @@ function SearchPage() {
 	const [podcasts, setPodcasts] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const { setError, error } = useContext(PodcastContext);
-	const [inputValue, setInputValue] = useState("Dear future wifey ");
+	const [inputValue, setInputValue] = useState("Dear future wifey");
 
 	function fetchData() {
 		setError(null);

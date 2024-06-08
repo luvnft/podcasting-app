@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
 		return (
 			<div>
 				<h1>Welcome to v2 of ATL5Dcast🎉</h1>
-				<p>You can now Search for your favorite Atlanta podcasts🚀</p>
+				<p>Search for your favorite Atlanta podcasts🚀</p>
 			</div>
 		);
 	}
